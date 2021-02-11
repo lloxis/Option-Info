@@ -1,0 +1,85 @@
+# 3;;
+- : int = 3
+# 12.7;;
+- : float = 12.7
+# 'a';;
+- : char = 'a'
+# "abcde";;
+- : string = "abcde"
+# false;;
+- : bool = false
+# let x = 5;;
+val x : int = 5
+# let y = x * 3;;
+val y : int = 15
+# x>y;;
+- : bool = false
+# let b = true && false;;
+val b : bool = false
+# let c = b || ( x = y);;
+val c : bool = false
+# let z = 3.7 *. 2.0 +. 1.3;;
+val z : float = 8.70000000000000107
+# let f1 x = x + 2;;
+val f1 : int -> int = <fun>
+# let f2 x = x ** 2.3;;
+val f2 : float -> float = <fun>
+# let f3 x y = x + y;;
+val f3 : int -> int -> int = <fun>
+# f3 2;;
+- : int -> int = <fun>
+# f3 2 2;;
+- : int = 4
+# f3 2 1;;
+- : int = 3
+# let f4 a b = a || b;;
+val f4 : bool -> bool -> bool = <fun>
+# let f5 (x,y) = x +. y;;
+val f5 : float * float -> float = <fun>
+# let f6 (a,b) c = a && b && (c<>1);;
+val f6 : bool * bool -> int -> bool = <fun>
+# let f7 x y = y = 3;;
+val f7 : 'a -> int -> bool = <fun>
+# f7 3;;
+- : int -> bool = <fun>
+# f7 7 9;;
+- : bool = false
+# f7 "etfdstf" 3;;
+- : bool = true
+# let f8 x y = (y = 3, x > 7.2);;
+val f8 : float -> int -> bool * bool = <fun>
+# let proj1 a b = a;;
+val proj1 : 'a -> 'b -> 'a = <fun>
+# let proj2 (a,b) = a;;
+val proj2 : 'a * 'b -> 'a = <fun>
+# let f9 g a b = g a + 3;;
+val f9 : ('a -> int) -> 'a -> 'b -> int = <fun>
+# let f10 g h x y = g x +. h y;;
+val f10 : ('a -> float) -> ('b -> float) -> 'a -> 'b -> float = <fun>
+# let f11 g h b1 b2 b3 = g (b1 + 2) || h (b2 *. 3.7) && b3;;
+val f11 : (int -> bool) -> (float -> bool) -> int -> float -> bool -> bool =
+  <fun>
+# f3 2;;
+- : int -> int = <fun>
+# f4 true;;
+- : bool -> bool = <fun>
+# let f12 x = if x > 5 then 13 else x-13;;    
+val f12 : int -> int = <fun>
+# f12 5;;
+- : int = -8
+# f12 6;;
+- : int = 13
+# let f13 a b = if a then b else not b;;
+val f13 : bool -> bool -> bool = <fun>
+# let f14 g a b = if a > b then g a else g b;;
+val f14 : ('a -> 'b) -> 'a -> 'a -> 'b = <fun>
+# let f15 x y z = (x y) z;;
+val f15 : ('a -> 'b -> 'c) -> 'a -> 'b -> 'c = <fun>
+# let f16 x y z = x y z;;
+val f16 : ('a -> 'b -> 'c) -> 'a -> 'b -> 'c = <fun>
+# let f17 x y z = x (y z);;
+val f17 : ('a -> 'b) -> ('c -> 'a) -> 'c -> 'b = <fun>
+# let f18 x y z = (x y) (z x);;
+val f18 : ('a -> 'b -> 'c) -> 'a -> (('a -> 'b -> 'c) -> 'b) -> 'c = <fun>
+# let f19 x y z = x (y z x);;        
+val f19 : ('a -> 'b) -> ('c -> ('a -> 'b) -> 'a) -> 'c -> 'b = <fun>
