@@ -76,3 +76,25 @@ let speudo_inverse f =
   else t, p;;
 
 let array_speudo_inverse = speudo_inverse ([|1; 4; 5; 7; 0|], 10);;
+
+let itere k f =
+  let (t, p) = f in
+  let t_response = Array.make p 0 in
+  for i = 0 to p-1 do
+    let i_puissance_k = ref t.(i) in
+    for i = 2 to k do
+        i_puissance_k := !i_puissance_k * !i_puissance_k done;
+    t_response.(i) <- !i_puissance_k done;
+  t_response, p;;
+
+itere 2 ([|1; 2; 3; 4; 7; 0; 0; 0; 0; 0|], 10);;
+
+
+let nombrePtFixe f =
+  let compteur = ref 0 in
+  let (t, p) = f in
+  for i = 1 to p-1 do
+      if t.(i) = i then compteur := !compteur + 1 done;
+  !compteur;;
+
+nombrePtFixe ([|1; 2; 3; 4; 7; 0; 0; 0; 8; 9|], 10);;
