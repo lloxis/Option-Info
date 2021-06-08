@@ -1,0 +1,11 @@
+
+(* let rec suite_rec f a n =
+  match n with
+  |0 -> a
+  |_ -> f (n-1) *)
+
+(* let rec modulo n d =
+  if n < d then d
+  else modulo (n-d) d;;
+
+modulo 41 2;; *)
